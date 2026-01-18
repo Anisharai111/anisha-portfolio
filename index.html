@@ -1,254 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anisha Rai | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anisha Rai | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; line-height: 1.6; }
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  nav {
+    position: sticky; top: 0; background: #fff; padding: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 1000;
+  }
+  nav ul { display: flex; justify-content: center; gap: 30px; list-style: none; }
+  nav ul li a { text-decoration: none; color: #6c63ff; font-weight: bold; transition: 0.3s; }
+  nav ul li a:hover { color: #4a44c2; }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  header {
+    background: linear-gradient(135deg, #6c63ff, #8e7ff2);
+    color: #fff; text-align: center; padding: 100px 20px; position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  header img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid #fff; margin-bottom: 20px; object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+  header h1 { font-size: 3rem; margin-bottom: 10px; animation: slideDown 1s ease-in-out; }
+  header p { font-size: 1.2rem; animation: slideUp 1s ease-in-out; }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      background: #ffffff;
-    }
+  @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+  @keyframes slideDown { from {transform: translateY(-20px); opacity:0;} to {transform: translateY(0); opacity:1;} }
+  @keyframes slideUp { from {transform: translateY(20px); opacity:0;} to {transform: translateY(0); opacity:1;} }
 
-    /* NAVBAR */
-    nav {
-      position: sticky;
-      top: 0;
-      background: #ffffff;
-      padding: 15px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
+  section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+  section:nth-child(even) { background: #f0f2f5; border-radius: 20px; margin: 40px 0; padding: 60px 20px; }
+  h2 { text-align: center; font-size: 2.2rem; margin-bottom: 40px; color: #6c63ff; position: relative; }
+  h2::after { content: ''; display: block; width: 60px; height: 3px; background: #6c63ff; margin: 10px auto 0; border-radius: 2px; }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
+  #about p { max-width: 700px; margin: auto; font-size: 1.1rem; }
 
-    nav a {
-      text-decoration: none;
-      color: #6c63ff;
-      font-weight: bold;
-    }
+  .skills, .projects, .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
 
-    nav a:hover {
-      color: #4a44c2;
-    }
+  .skill {
+    background: linear-gradient(135deg, #ffe6f0, #ffd6ff);
+    color: #333; padding: 12px 25px; border-radius: 30px; font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  }
+  .skill:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); background: linear-gradient(135deg, #ffcce6, #ffb3ff); }
 
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, #6c63ff, #8e7ff2);
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-      position: relative;
-      z-index: 1;
-    }
+  .project-card {
+    background: #fff; padding: 25px; border-radius: 15px; flex: 1 1 280px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  }
+  .project-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.25); background: #f7f4ff; }
+  .project-card a { color: #6c63ff; font-weight: bold; text-decoration: none; }
+  .project-card a:hover { text-decoration: underline; }
 
-    header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 5px solid white;
-      object-fit: cover;
-      margin-bottom: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
+  #contact .skill {
+    background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 12px;
+    padding: 15px 25px; text-align: center; transition: transform 0.3s, background 0.3s;
+  }
+  #contact .skill:hover { transform: translateY(-5px); background: #f7f4ff; }
 
-    header h1 {
-      font-size: 3rem;
-    }
+  footer { text-align: center; padding: 20px; background: #eee; margin-top: 60px; border-radius: 10px; }
 
-    header p {
-      font-size: 1.2rem;
-    }
-
-    /* SECTIONS */
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 80px 20px;
-    }
-
-    section:nth-of-type(even) {
-      background: #f0f2f5;
-      border-radius: 20px;
-      margin: 40px auto;
-    }
-
-    h2 {
-      text-align: center;
-      color: #6c63ff;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-    }
-
-    h2::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #6c63ff;
-      margin: 10px auto 0;
-      border-radius: 2px;
-    }
-
-    /* ABOUT */
-    #about p {
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    /* FLEX SECTIONS */
-    .skills, .projects, .contact {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .skill {
-      background: linear-gradient(135deg, #ffe6f0, #ffd6ff);
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .skill:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-
-    /* PROJECT CARD */
-    .project-card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      flex: 1 1 280px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
-
-    .project-card a {
-      color: #6c63ff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #eeeeee;
-      margin-top: 60px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
+  @media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+    header p { font-size: 1rem; }
+    h2 { font-size: 1.6rem; }
+    nav ul { flex-direction: column; gap: 15px; }
+  }
+</style>
 </head>
-
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <header>
-    <!-- IMPORTANT: replace YOUR_REPO_NAME -->
-    <img src="/YOUR_REPO_NAME/profile.jpg" alt="Anisha Rai">
-    <h1>Anisha Rai</h1>
-    <p>Web Developer | TypeScript Enthusiast</p>
-  </header>
+<header>
+  <img src="profile.jpg" alt="Anisha Rai">
+  <h1>Anisha Rai</h1>
+  <p>Web Developer | TypeScript Enthusiast</p>
+</header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi! I'm Anisha, a passionate web developer experienced in TypeScript,
-      React, and building interactive web applications.
-    </p>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hi! I'm Anisha, a passionate web developer with experience in TypeScript, React, and creating interactive web applications. I love building projects that make life easier and learning new technologies along the way.</p>
+</section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill">TypeScript</div>
-      <div class="skill">React / Next.js</div>
-      <div class="skill">HTML / CSS / JavaScript</div>
-      <div class="skill">Git / GitHub</div>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">TypeScript</div>
+    <div class="skill">React / Next.js</div>
+    <div class="skill">HTML / CSS / JavaScript</div>
+    <div class="skill">Git / GitHub</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h3>Anisha Code Creation</h3>
+      <p>Built a TypeScript-based interactive web project with responsive design and dynamic user interaction.</p>
+      <p><a href="https://anisharai111.github.io/anisha-code-creation/" target="_blank">View Live Project</a></p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Anisha Code Creation</h3>
-        <p>Interactive TypeScript web project with responsive design.</p>
-        <p>
-          <a href="https://anisharai111.github.io/anisha-code-creation/" target="_blank">
-            View Live Project
-          </a>
-        </p>
-      </div>
-    </div>
-  </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <div class="skill">📧 anisharaii252@gmail.com</div>
+    <div class="skill">💻 <a href="https://github.com/anisharai111" target="_blank">GitHub</a></div>
+    <div class="skill">LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">Profile</a></div>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <div class="skill">📧 anisharaii252@gmail.com</div>
-      <div class="skill">
-        💻 <a href="https://github.com/anisharai111" target="_blank">GitHub</a>
-      </div>
-      <div class="skill">
-        🔗 <a href="#" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2026 Anisha Rai
-  </footer>
+<footer>
+  &copy; 2026 Anisha Rai
+</footer>
 
 </body>
 </html>
+still not showing picture on portfolio
