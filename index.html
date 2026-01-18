@@ -9,6 +9,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; line-height: 1.6; }
 
+  /* NAVBAR */
   nav {
     position: sticky; top: 0; background: #fff; padding: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 1000;
   }
@@ -16,9 +17,10 @@
   nav ul li a { text-decoration: none; color: #6c63ff; font-weight: bold; transition: 0.3s; }
   nav ul li a:hover { color: #4a44c2; }
 
+  /* HEADER */
   header {
     background: linear-gradient(135deg, #6c63ff, #8e7ff2);
-    color: #fff; text-align: center; padding: 100px 20px; position: relative;
+    color: #fff; text-align: center; padding: 100px 20px; position: relative; z-index: 1;
     animation: fadeIn 1.5s ease-in-out;
   }
   header img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid #fff; margin-bottom: 20px; object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
@@ -29,8 +31,10 @@
   @keyframes slideDown { from {transform: translateY(-20px); opacity:0;} to {transform: translateY(0); opacity:1;} }
   @keyframes slideUp { from {transform: translateY(20px); opacity:0;} to {transform: translateY(0); opacity:1;} }
 
+  /* SECTIONS */
   section { padding: 80px 20px; max-width: 1000px; margin: auto; }
-  section:nth-child(even) { background: #f0f2f5; border-radius: 20px; margin: 40px 0; padding: 60px 20px; }
+  section:nth-of-type(even) { background: #f0f2f5; border-radius: 20px; margin: 40px 0; padding: 60px 20px; }
+
   h2 { text-align: center; font-size: 2.2rem; margin-bottom: 40px; color: #6c63ff; position: relative; }
   h2::after { content: ''; display: block; width: 60px; height: 3px; background: #6c63ff; margin: 10px auto 0; border-radius: 2px; }
 
@@ -81,6 +85,7 @@
 </nav>
 
 <header>
+  <!-- Replace anisha-portfolio with your actual repo name -->
   <img src="/anisha-portfolio/profile.jpg" alt="Anisha Rai">
   <h1>Anisha Rai</h1>
   <p>Web Developer | TypeScript Enthusiast</p>
@@ -127,4 +132,3 @@
 
 </body>
 </html>
-still not showing picture on portfolio
