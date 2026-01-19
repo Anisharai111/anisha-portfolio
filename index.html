@@ -41,12 +41,16 @@
   #about p { max-width: 700px; margin: auto; font-size: 1.1rem; }
 
   .skills, .projects, .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+ .skill {
+  background: linear-gradient(135deg, #ffe6f0, #ffd6ff);
+  color: #333;
+  padding: 18px 40px;      
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;     
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
 
-  .skill {
-    background: linear-gradient(135deg, #ffe6f0, #ffd6ff);
-    color: #333; padding: 12px 25px; border-radius: 30px; font-weight: bold;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-  }
   .skill:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); background: linear-gradient(135deg, #ffcce6, #ffb3ff); }
 
   .project-card {
